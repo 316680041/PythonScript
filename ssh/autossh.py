@@ -1,5 +1,6 @@
 # coding=UTF-8
-import pexpect 
+import pexpect
+import optparse
 PROMPT = ['# ', '>>> ', '> ', '\$ '] 
 
 #执行命令模块
@@ -27,9 +28,16 @@ def connect(user, host, password):
 	return child
 
 def main():
-	hostPath = input('请输入主机文件路径')
-	cmd 	 = input('请输入要执行的命令')
-	hostFile = open(hostPath, 'r')#打开密码文件
+	parser = optparse.OptionParser('usage%prog '+'-H <hostFile> -m <cmd>')    
+	parser.add_option('-H', dest='hostFile', type='string', help='specify host file')    
+	parser.add_option('-m', dest='cmd', type='string', help='specify cmd')    
+	(options, args) = parser.parse_args()    
+	hostFile = options.hostFile
+	cmd 	 = options.cmd
+	if hostFile == None or cmd == None:        
+		print(parser.usage)        
+		exit(0)  
+	hostFile = open(hostFile, 'r')#打开密码文件
 	for line in hostFile.readlines():
 		user 	 = line.split(' ')[0]#获取用户名
 		host 	 = line.split(' ')[1]#获取主机

@@ -1,4 +1,5 @@
 # coding=UTF-8
+import optparse
 from crypt import crypt
 
 def testPass(dictPath,cryptSalt,cryptPass):
@@ -13,20 +14,27 @@ def testPass(dictPath,cryptSalt,cryptPass):
 		print('Current progress is',word)
 		cryptWord = crypt(word, cryptSalt)#获取字典的密码和盐结合
 		if cryptPass == cryptWord:#匹配密码
-			print('passed is : ', word)#匹配成功输出解密后的密码，然后返回
+			print('password is : ', word)#匹配成功输出解密后的密码，然后返回
 			return
 
 def main():
-	passPath = input('请输入密码文件路径')
-	dictPath = input('请输入字典文件路径')
-	passFile = open(passPath, 'r')#打开密码文件
+	parser = optparse.OptionParser('usage%prog '+'-p <passFile> -d <dictFile>')    
+	parser.add_option('-p', dest='passFile', type='string', help='specify password file')    
+	parser.add_option('-d', dest='dictFile', type='string', help='specify dictionary file')    
+	(options, args) = parser.parse_args()    
+	passFile = options.passFile
+	dictFile = options.dictFile
+	if passFile == None or dictFile == None:        
+		print(parser.usage)        
+		exit(0)   
+	passFile = open(passFile, 'r')#打开密码文件
 	for line in passFile.readlines():
 		user = line.split(':')[0]#获取用户名
 		if user=='root':
 			cryptSalt = '$'+line.split('$')[1]+'$'+line.split('$')[2]#获取盐
 			cryptPass = line.split(':')[1]#获取加密后的密码
 			print("In cracking, please be patient...")
-			testPass(dictPath,cryptSalt,cryptPass)
+			testPass(dictFile,cryptSalt,cryptPass)
 			return
 
 

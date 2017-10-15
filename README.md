@@ -12,4 +12,4 @@ autossh.py 通过ssh自动化运维，让多台服务器执行发布的命令。
 
 autosshPxssh.py 通过ssh自动化运维，让多台服务器执行发布的命令。(优化版)
 
-sshCrack.py 通过密码字典暴力破解远程ssh密码
+sshBrute.py 通过密码字典暴力破解远程ssh密码

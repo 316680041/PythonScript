@@ -6,6 +6,14 @@
 
 使用字典暴力破解unix密码文件,得出结果与服务器cpu运算速度有关。
 
+# Scan 模块
+
+Scan.py 扫描主机的端口是否存活(暂不可用)
+
+ScanFtp.py 搜索主机的FTP服务是否可以匿名登录
+
+ScanNamp.py 通过Nmap模块扫描主机端口是否存活(暂不可用)
+
 # ssh 模块
 
 autossh.py 通过ssh自动化运维，让多台服务器执行发布的命令。(原生)
@@ -13,3 +21,7 @@ autossh.py 通过ssh自动化运维，让多台服务器执行发布的命令。
 autosshPxssh.py 通过ssh自动化运维，让多台服务器执行发布的命令。(优化版)
 
 sshBrute.py 通过密码字典暴力破解远程ssh密码
+
+sshBruteKey.py 通过密钥库暴力破解远程ssh密钥（弱密钥,暂不可用）
+
+sshSession.py 建立ssh连接池，把客户机放入连接池里面，长时间控制客户机。

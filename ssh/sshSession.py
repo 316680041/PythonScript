@@ -39,7 +39,6 @@ def addClient(host, user, password):
 
 #主函数
 def main():
-	botNet = []#创建连接池
 	addClient('172.25.24.10', 'root', 'password') 
 	addClient('172.25.24.20', 'root', 'password') 
 	addClient('172.25.24.30', 'root', 'password') 

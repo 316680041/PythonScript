@@ -3,6 +3,8 @@
 import optparse 
 from pexpect import pxssh
 
+botNet = []#创建连接池
+
 #连接客户端主机的类
 class Client:
 	def __init__(self, host, user, password):        
@@ -28,7 +30,7 @@ def botnetCommand(command):
 	for client in botNet:        
 		output = client.send_command(command)        
 		print('[*] Output from ' + client.host)        
-		print('[+] ' + output + '\n')
+		print('[+] ' + str(output) + '\n')
 
 #连接主机，然后添加到连接池里面
 def addClient(host, user, password):    

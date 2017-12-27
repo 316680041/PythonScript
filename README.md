@@ -33,3 +33,13 @@ server.py 服务端,生成队列进程
 client.py 客户端,从服务器进程中获取队列数据,执行并返回
 
 insert.py 向服务器进程插入队列数据
+
+# 转换乱码的csv文件成xls文件+自动发送邮件 模块
+
+run.py 运行python脚本的文件
+
+sendEmail.py 发送带附件的email
+
+sendEmail2.py 发送简单的文字email
+
+transCoding.py 将乱码的csv文件转换成为utf-8格式的xls文件

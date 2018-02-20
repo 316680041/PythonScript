@@ -95,10 +95,8 @@ demo.xml 要解析的XML文件
 获取服务器信息xml文件里面的数据，输入到xls文件里面
 
 data 目录(数据信息目录)
-
-|——bios 主板数据目录
-
-|——cpu CPU数据目录
+	|——bios 主板数据目录
+	|——cpu CPU数据目录
 
 |——memory 内存数据目录
 

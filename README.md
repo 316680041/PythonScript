@@ -1,6 +1,6 @@
-﻿# 简介
+# 简介
  
-常用Python脚本,每个目录为一个功能模块，环境为Python2.7或者3.6，进入功能模块之后直接使用python 运行文件即可。
+常用Python脚本,每个目录为一个功能模块，环境为Python2.7或者3.6，进入功能模块之后直接使用python 运行文件即可
 
 # automationScript 模块
 
@@ -16,7 +16,7 @@ transCoding.py 将乱码的csv文件转换成为utf-8格式的xls文件
 
 # cryptPass 模块
 
-使用字典暴力破解unix密码文件,得出结果与服务器cpu运算速度有关。
+使用字典暴力破解unix密码文件,得出结果与服务器cpu运算速度有关
 
 cryptPass.py 暴力破解unix密码文件
 
@@ -52,9 +52,9 @@ reTest.jpg 要识别的图片
 
 查看主机上用户已经删除的文件
 
-dumpRecycleBin.py 查看主机上用户已经删除的文件。
+dumpRecycleBin.py 查看主机上用户已经删除的文件
 
-注：该模块要用python2.7运行,python3运行会出错。
+注：该模块要用python2.7运行,python3运行会出错
 
 # Scan 模块
 
@@ -66,18 +66,45 @@ ScanNamp.py 通过Nmap模块扫描主机端口是否存活(暂不可用)
 
 # ssh 模块
 
-autossh.py 通过ssh自动化运维，让多台服务器执行发布的命令。(原生)
+autossh.py 通过ssh自动化运维，让多台服务器执行发布的命令(原生)
 
-autosshPxssh.py 通过ssh自动化运维，让多台服务器执行发布的命令。(优化版)
+autosshPxssh.py 通过ssh自动化运维，让多台服务器执行发布的命令(优化版)
 
 sshBrute.py 通过密码字典暴力破解远程ssh密码
 
 sshBruteKey.py 通过密钥库暴力破解远程ssh密钥（弱密钥,暂不可用）
 
-sshSession.py 建立ssh连接池，把客户机放入连接池里面，长时间控制客户机。
+sshSession.py 建立ssh连接池，把客户机放入连接池里面，长时间控制客户机
 
 # tracking 模块
 
 提取图片里面的隐藏数据
 
-trackingPicture.py 从图片中提取数据，查看图片是否有地理位置，有则打印，没有则打印图片全部属性。
+trackingPicture.py 从图片中提取数据，查看图片是否有地理位置，有则打印，没有则打印图片全部属性
+
+# xmlDemo 模块
+
+Python解析XML文件的demo
+
+run.py 运行python脚本的文件
+
+demo.xml 要解析的XML文件
+
+# xmlTransitionXls 模块
+
+获取服务器信息xml文件里面的数据，输入到xls文件里面
+
+data 目录(数据信息目录)
+  |——bios 主板数据目录
+  |——cpu CPU数据目录
+  |——memory 内存数据目录
+  |——os 系统数据目录
+
+lib 目录(功能模块目录)
+  |——parseXml.py 获取服务器信息xml文件里面的数据
+  |——transXlsx.py 将数据写入到xls文件里面
+
+logs 目录(暂未开发)
+
+sbin 目录(可执行程序目录)
+  |——run.py 运行python脚本的文件

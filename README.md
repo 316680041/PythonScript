@@ -1,10 +1,60 @@
 ﻿# 简介
  
-常用Python脚本,每个目录为一个功能模块，环境为Python3.6+，进入功能模块之后直接使用python 运行文件即可。
+常用Python脚本,每个目录为一个功能模块，环境为Python2.7或者3.6，进入功能模块之后直接使用python 运行文件即可。
+
+# automationScript 模块
+
+转换乱码的csv文件成xls文件+自动发送邮件
+
+run.py 运行python脚本的文件
+
+sendEmail.py 发送带附件的email
+
+sendEmail2.py 发送简单的文字email
+
+transCoding.py 将乱码的csv文件转换成为utf-8格式的xls文件
 
 # cryptPass 模块
 
 使用字典暴力破解unix密码文件,得出结果与服务器cpu运算速度有关。
+
+cryptPass.py 暴力破解unix密码文件
+
+# distributedQueue 模块
+
+分布式队列+多线程执行任务
+
+server.py 服务端,生成队列进程
+
+client.py 客户端,从服务器进程中获取队列数据,执行并返回
+
+insert.py 向服务器进程插入队列数据
+
+# ftp 模块
+
+ftpBrute.py ftp爆破账号密码
+
+PasswordList.txt 爆破ftp账号密码的字典
+
+# pdf 模块
+
+pdfRead.py 提取pdf文件隐藏的数据(元数据)
+
+# reTest 模块
+
+识别图片里面的文字，并提取出来
+
+reTest.py 图片文字识别
+
+reTest.jpg 要识别的图片
+
+# recycleBin 模块
+
+查看主机上用户已经删除的文件
+
+dumpRecycleBin.py 查看主机上用户已经删除的文件。
+
+注：该模块要用python2.7运行,python3运行会出错。
 
 # Scan 模块
 
@@ -26,20 +76,8 @@ sshBruteKey.py 通过密钥库暴力破解远程ssh密钥（弱密钥,暂不可�
 
 sshSession.py 建立ssh连接池，把客户机放入连接池里面，长时间控制客户机。
 
-# 分布式队列+多线程 模块
+# tracking 模块
 
-server.py 服务端,生成队列进程
+提取图片里面的隐藏数据
 
-client.py 客户端,从服务器进程中获取队列数据,执行并返回
-
-insert.py 向服务器进程插入队列数据
-
-# 转换乱码的csv文件成xls文件+自动发送邮件 模块
-
-run.py 运行python脚本的文件
-
-sendEmail.py 发送带附件的email
-
-sendEmail2.py 发送简单的文字email
-
-transCoding.py 将乱码的csv文件转换成为utf-8格式的xls文件
+trackingPicture.py 从图片中提取数据，查看图片是否有地理位置，有则打印，没有则打印图片全部属性。

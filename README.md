@@ -95,16 +95,16 @@ demo.xml 要解析的XML文件
 获取服务器信息xml文件里面的数据，输入到xls文件里面
 
 data 目录(数据信息目录)
-  |——bios 主板数据目录
-  |——cpu CPU数据目录
-  |——memory 内存数据目录
-  |——os 系统数据目录
+|——bios 主板数据目录
+|——cpu CPU数据目录
+|——memory 内存数据目录
+|——os 系统数据目录
 
 lib 目录(功能模块目录)
-  |——parseXml.py 获取服务器信息xml文件里面的数据
-  |——transXlsx.py 将数据写入到xls文件里面
+|——parseXml.py 获取服务器信息xml文件里面的数据
+|——transXlsx.py 将数据写入到xls文件里面
 
 logs 目录(暂未开发)
 
 sbin 目录(可执行程序目录)
-  |——run.py 运行python脚本的文件
+|——run.py 运行python脚本的文件

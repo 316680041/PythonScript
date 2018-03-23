@@ -78,13 +78,13 @@ sshSession.py 建立ssh连接池，把客户机放入连接池里面，长时间
 
 #  Tracking模块
 
-提取xls文件的ip和uuid批量执行安装监控Agent
+提取图片里面的隐藏数据
 
 trackingPicture.py 从图片中提取数据，查看图片是否有地理位置，有则打印，没有则打印图片全部属性
 
 # TstackMonitorClusterAddition 模块
 
-提取图片里面的隐藏数据
+提取xls文件的ip和uuid批量执行安装监控Agent
 
 data 目录(数据信息目录)
 

@@ -76,11 +76,35 @@ sshBruteKey.py 通过密钥库暴力破解远程ssh密钥（弱密钥,暂不可�
 
 sshSession.py 建立ssh连接池，把客户机放入连接池里面，长时间控制客户机
 
+# TstackMonitorClusterAddition 模块
+
+提取xls文件的ip和uuid批量执行安装监控Agent
+
+trackingPicture.py 从图片中提取数据，查看图片是否有地理位置，有则打印，没有则打印图片全部属性
+
 # Tracking 模块
 
 提取图片里面的隐藏数据
 
-trackingPicture.py 从图片中提取数据，查看图片是否有地理位置，有则打印，没有则打印图片全部属性
+data 目录(数据信息目录)
+
+|——Linux_agent_minion 监控Linux系统的Agent程序
+
+libs 目录(功能模块目录)
+
+|——AccessXls.py 提取xls文件的ip和uuid信息
+
+|——Remote.py 远程执行代码
+
+|——Common.py 公有函数
+
+logs 目录(暂未开发)
+
+|——暂无信息
+
+sbin 目录(可执行程序目录)
+
+|——run.py 运行python脚本的文件
 
 # XmlDemo 模块
 
@@ -104,7 +128,7 @@ data 目录(数据信息目录)
 
 |——os 系统数据目录
 
-lib 目录(功能模块目录)
+libs 目录(功能模块目录)
 
 |——parseXml.py 获取服务器信息xml文件里面的数据
 

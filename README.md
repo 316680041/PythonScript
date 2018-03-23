@@ -76,13 +76,13 @@ sshBruteKey.py 通过密钥库暴力破解远程ssh密钥（弱密钥,暂不可�
 
 sshSession.py 建立ssh连接池，把客户机放入连接池里面，长时间控制客户机
 
-# TstackMonitorClusterAddition 模块
+#  Tracking模块
 
 提取xls文件的ip和uuid批量执行安装监控Agent
 
 trackingPicture.py 从图片中提取数据，查看图片是否有地理位置，有则打印，没有则打印图片全部属性
 
-# Tracking 模块
+# TstackMonitorClusterAddition 模块
 
 提取图片里面的隐藏数据
 

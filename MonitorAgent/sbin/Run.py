@@ -43,8 +43,8 @@ def main():
 		accessXlsObj.OpenFile(fileName)
 
 		#获取ip和uuid和数据的数量
-		ip 	 = accessXlsObj.ReadMessageLine(26)
-		uuid = accessXlsObj.ReadMessageLine(1)
+		ip 	 = accessXlsObj.ReadMessageLine(36)
+		uuid = accessXlsObj.ReadMessageLine(2)
 		count = accessXlsObj.ReadMessageCount()
 
 		#初始化一个list

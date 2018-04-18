@@ -18,7 +18,7 @@ class AccessXls:
 	#获取xls表列的数据
 	def ReadMessageLine(self,line):        
 		data = xlrd.open_workbook(self.fileName)
-		table = data.sheet_by_name(u'Data')
+		table = data.sheet_by_name(u'Server')
 		xlsLine = table.col_values(line)
 		del xlsLine[0]
 		return xlsLine
@@ -26,6 +26,6 @@ class AccessXls:
 	#获取xls表有多少条数据
 	def ReadMessageCount(self):        
 		data = xlrd.open_workbook(self.fileName)
-		table = data.sheet_by_name(u'Data')
+		table = data.sheet_by_name(u'Server')
 		count = table.nrows - 1
 		return count

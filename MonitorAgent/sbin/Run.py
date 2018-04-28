@@ -1,7 +1,10 @@
 #!/usr/bin/python2.7
 # coding=UTF-8 
 
-'''该模块可以将自动化批量部署agent'''
+'''
+	该模块可以将自动化批量部署agent
+	执行命令：python Run.py -f xls文件路径 -p scp的密码
+'''
 
 __author__ = "jiegl"
 
@@ -21,14 +24,16 @@ catalog = os.path.abspath(os.path.join(os.getcwd(), "../data/Linux_agent_minion"
 def main():
 
 	#提示输入参数
-	parser = optparse.OptionParser('usage %prog -f <xls file name>')
+	parser = optparse.OptionParser('usage %prog -f <xls file name> -p <inpute password>')
 	parser.add_option('-f', dest='fileName', type='string', help='specify xls file name')
+	parser.add_option('-p', dest='password', type='string', help='specify connect scp password')
 
 	#提取输入参数
 	(options, args) = parser.parse_args()    
 	fileName 	 = options.fileName
+	password 	 = options.password
 
-	if fileName == None:        
+	if fileName == None or password == None :        
 		print(parser.usage)        
 		exit(0)
 	else:
@@ -43,7 +48,7 @@ def main():
 		accessXlsObj.OpenFile(fileName)
 
 		#获取ip和uuid和数据的数量
-		ip 	 = accessXlsObj.ReadMessageLine(36)
+		ip 	 = accessXlsObj.ReadMessageLine(34)
 		uuid = accessXlsObj.ReadMessageLine(2)
 		count = accessXlsObj.ReadMessageCount()
 
@@ -62,14 +67,14 @@ def main():
 			#开启写入日志状态
 			logsObj.Start("../logs/log.txt")
 			#连接到服务器
-			remoteObj.Connect(value["ip"],'root','')
+			remoteObj.Connect(value["ip"],'root',password)
 			#传输文件到服务器
-			os.system("scp -r " + catalog + " root@" + value["ip"] + ":/root/")
+			os.system("sshpass -p " + password  + " scp -r " + catalog + " root@" + value["ip"] + ":/root/")
 			#修改配置文件,server_ip的信息
 			remoteObj.SendCommand('sed -i -e "s/server_ip =.*/server_ip = ' + value["ip"] + '/g"' + " /root/Linux_agent_minion/config.ini")
 			remoteObj.SendCommand('sed -i -e "s/uuid =.*/uuid = ' + value["uuid"] + '/g"' + " /root/Linux_agent_minion/config.ini")
 			#执行安装agent
-			remoteObj.SendCommand('cd /root/Linux_agent_minion && bash install.sh')
+			#remoteObj.SendCommand('cd /root/Linux_agent_minion && bash install.sh')
 			#关闭写入日志状态
 			logsObj.Close()
 			#打印执行状态
